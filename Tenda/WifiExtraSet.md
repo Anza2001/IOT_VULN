@@ -9,6 +9,7 @@
 
 ## Vulnerability Description
 The vulnerability is detected at `/bin/httpd`.
+
 There is a stack overflow vulnerability in function `wlSetExternParameter`, in which the `wpapsk_cryptovalue` variable can be obtained from the http request parameter `wpapsk_crypto` without checking its size. The vulnerability can be triggered following `fromSetWirelessRepeat->wlSetExternParameter`.
 
 <img src="img/3.jpg" style="zoom: 42%;" />
