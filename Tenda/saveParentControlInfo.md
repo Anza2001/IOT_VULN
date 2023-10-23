@@ -8,6 +8,7 @@
 <img src="img/0.jpg" style="zoom: 50%;" />
 
 ## Vulnerability Description
+The vulnerability is detected at `/bin/httpd`.
 
 There is a heap overflow vulnerability in `saveParentControlInfo` function, in which the `Var` variable is obtained directly from the http request parameter `deviceId` without checking its size. Then this function calls the `strcpy` function to copy the `Var` to `v6->mac_addr`, a heap pointer. So, it's likely to cause a heap overflow when we deliver a long enough parameter `deviceId`.
 
